@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center m-4">
+<h1>All your beautiful Restaurants</h1>
+</div>
+
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand"><%= link_to "Homepage", restaurants_path %></a>
+    <a class="navbar-brand"><%= link_to "Add Restaurant", new_restaurant_path %></a>
+  </nav>
+</div>
+
+<% @restaurants.each_with_index do |restaurant, index| %>
+  <div class="d-flex justify-content-center m-4">
+  <%= link_to "#{index + 1} - #{restaurant.name} (#{restaurant.category})", restaurant_path(restaurant) %>
+  <br>
+  </div>
+<% end %>
+
+
+
+
